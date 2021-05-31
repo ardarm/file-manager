@@ -15,19 +15,11 @@ def main():
     rm_arg = args.remove
 
     if cat_arg is not None:
-        if len(cat_arg) < 1:
-            print("Must have minimal 1 argument")
-        else:
-            files_to_read = cat_arg
-            for file in files_to_read:
-                read_file(file)
+        files_to_read = cat_arg
+        read_files = [read_file(file) for file in files_to_read]
     elif touch_arg is not None:
-        if len(touch_arg) < 1:
-            print("Must have minimal 1 argument")
-        else:
-            files_to_create = touch_arg
-            for file in files_to_create:
-                create_file(file)
+        files_to_create = touch_arg
+        create_files = [create_file(file) for file in files_to_create]
     elif cp_arg is not None:
         if len(cp_arg) < 2:
             print("\nCommand must have minimal 2 arguments")
@@ -45,11 +37,8 @@ def main():
             for file in files_to_moved:
                 move_file(file, move_dest)
     elif rm_arg is not None:
-        if len(rm_arg) < 1:
-            print("\nMust have minimal 1 argument")
-        else:
-            for file in rm_arg:
-                remove_file(file)
+        files_to_removed = rm_arg
+        remove_files = [remove_file(file) for file in files_to_removed]
     else:
         print("\nNo arguments provided, please use -h flag to read help")
 

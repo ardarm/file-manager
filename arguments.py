@@ -12,14 +12,14 @@ def get_args():
 
     parser.add_argument('-cat',
                         '--read',
-                        nargs='*',
+                        nargs='+',
                         help='Read a File',
                         metavar='str',
                         type=str)
 
     parser.add_argument('-touch',
                         '--create',
-                        nargs='*',
+                        nargs='+',
                         help='Create empty files',
                         metavar='str',
                         type=str)
@@ -43,7 +43,7 @@ def get_args():
 
     parser.add_argument('-rm',
                         '--remove',
-                        nargs='*',
+                        nargs='+',
                         help='Remove an existing file',
                         metavar='str',
                         type=str)

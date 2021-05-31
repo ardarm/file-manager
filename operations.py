@@ -10,7 +10,7 @@ def read_file(filename):
         with open(filename) as f:
             print(f.read())
     except FileNotFoundError:
-        print(f"{filename} not exist!")
+        print(f"{filename} doesn't exist!")
     except IsADirectoryError:
         print(f"\n{filename} is a directory, cannot be read!")
 
