@@ -10,6 +10,8 @@ def main():
     operations = Operations()
 
     gui = Interface(window, operations)
+    operations.get_directory_contents(gui.left_listbox)
+    operations.get_directory_contents(gui.right_listbox)
 
     window.mainloop()
 
