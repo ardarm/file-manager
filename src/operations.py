@@ -80,3 +80,8 @@ def _remove_file(filename):
 def remove_files(files):
     for file in files:
         _remove_file(file)
+
+
+def list_dir(target_dir):
+    yield ".."
+    yield from os.listdir(target_dir)
