@@ -12,9 +12,7 @@ class Operations():
         self.left_listbox_path = os.getcwd()
         self.right_listbox_path = os.getcwd()
 
-    def get_listbox(self, **kwargs):
-        if kwargs: 
-            self.listbox = kwargs['listbox']
+    def get_listbox(self):
         if str(self.listbox)[-1] == "2":
             self.current_directory = self.right_listbox_path
             return self.right_listbox_path
