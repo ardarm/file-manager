@@ -80,3 +80,14 @@ def _remove_file(filename):
 def remove_files(files):
     for file in files:
         _remove_file(file)
+
+
+def list_dir(target_dir):
+    for _, directories, files in os.walk(target_dir):
+        yield ".."
+        for directory in directories:
+            yield directory
+        for file in files:
+            yield file
+        # only loop though top level directory
+        break
